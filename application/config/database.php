@@ -11,11 +11,11 @@
 
 $active_group = 'default';
 $active_record = TRUE;
-
-$db['default']['hostname'] = isset($_SERVER['CI_DB_URL'])?$_SERVER['CI_DB_URL']:'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'okci_test';
+$db['default']['hostname'] = getenv('DATABASE_HOST')?getenv('DATABASE_HOST'): 'localhost';
+$db['default']['dbport'] = getenv('DATABASE_PORT')?getenv('DATABASE_PORT'):'3306';
+$db['default']['username'] = getenv('DATABASE_USERNAME')?getenv('DATABASE_USERNAME'):'root';
+$db['default']['password'] = getenv('DATABASE_PASSWORD')?getenv('DATABASE_PASSWORD'):'';
+$db['default']['database'] = getenv('DATABASE_NAME')?getenv('DATABASE_NAME'):'okci_test';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
