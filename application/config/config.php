@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
  */
  date_default_timezone_set('US/Eastern');
-$config['base_url'] = 'http://localhost/foodapp/';
+$config['base_url'] = getenv('BASE_URL')?getenv('BASE_URL'):'http://localhost/foodapp/';
 
 /*
 |--------------------------------------------------------------------------
